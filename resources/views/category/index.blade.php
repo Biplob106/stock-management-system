@@ -46,7 +46,7 @@
 
                         <a class="btn btn-primary" href="{{ route('category.edit',$category->id) }}">Edit</a>
 
-                    <form action="" method="POST">
+                    <form action="{{ route('category.delete',$category->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
 

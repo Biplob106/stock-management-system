@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Add New Product</h2>
+                <h2>Update the Category</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('category.index') }}"> Back</a>
@@ -21,9 +21,9 @@
         </ul>
     </div>
 @endif
-<form action="{{  url('/category/edit/'.$category->id)}}"  enctype="multipart/form-data"  method="POST">
-    @csrf
-    @method('PUT')
+<form action="{{  route('category.edit',$category->id)}}"  enctype="multipart/form-data"  method="POST">
+    {{  csrf_field()}}
+    {{ method_field('PUT') }}
      <div class="row">
         <div class="mb-3 mt-3">
             <div class="form-group">

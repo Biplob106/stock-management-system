@@ -22,7 +22,7 @@ class CatergoryController extends Controller
      {
         $request->validate([
             'name'=>'required',
-            'image'=>'required|image|mimes:jpeg,jpg,png,gif|max:2048'
+            'image'=>'required|image|mimes:jpeg,jpg,png,gif'
         ]);
         $input = $request->except('_token');
 
@@ -52,33 +52,30 @@ class CatergoryController extends Controller
 
     }
      public function update(  Request $request ,$id){
-
-        $category=Category::find($id);
         $request->validate([
             'name'=>'required',
             'image'=>'required|image|mimes:jpeg,jpg,png,gif|max:2048'
         ]);
-        $input = $request->except('_token');
+
+        $category = Category::findOrFail($id);
 
         if ($image = $request->file('image')) {
             $destinationPath = 'images/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['image'] = $profileImage;
-
         }
-        else{
-            unset($input['image']);
-        }
-        $category->update();
-
-        return redirect()->route('category.index')
-                        ->with('success','category updated  successfully.');
+        $category->update([
+            'name'=>$request->name,
+            'image'=>$request->image,
+        ]);
+        return redirect()->route('categorys.index')
+          ->with('success', 'category updated successfully.');
 
      }
-     public function delete( Category $category){
+     public function delete($id){
 
-       $category->delete();
+       $category=Category::find($id)->delete();
 
        return redirect()->route('category.index')
        ->with('success','category deleted successfully');
