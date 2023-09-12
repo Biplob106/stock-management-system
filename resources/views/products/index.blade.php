@@ -42,36 +42,37 @@
                 <!-- end table row-->
               </thead>
               <tbody>
+                @foreach($product As $data)
                 <tr>
                   <td class="min-width">
-                    <p>name</p>
+                    <p>{{$data->name}}</p>
                   </td>
                   <td class="min-width">
-                    <p>category</p>
+                    <p>{{$data->category->name}}</p>
                   </td>
                   <td class="min-width">
-                    <p>Qunantity</p>
+                    <p>{{$data->quantity}}</p>
                   </td>
                   <td class="min-width">
-                    <p>desc</p>
+                    <p>{{$data->description}}</p>
                   </td>
                   <td class="min-width">
-                    <p>price</p>
+                    <p>{{$data->price}}</p>
                   </td>
                   <td class="min-width">
-                    <p>unique code</p>
+                    <p>{{$data->unique-code}}</p>
                   </td>
                   <td class="min-width">
                     <div class="lead">
                       <div class="lead-image">
-                        <img src="" width="100px" alt="" />
+                        <img src="{{$data->image}}" width="100px" alt="" />
                       </div>
                     </div>
                   </td>
                   <td class="min-width">
                     <div class="lead">
                       <div class="lead-image">
-                        <img src="" width="100px" alt="" />
+                        <img src="{{$data->image}}" width="100px" alt="" />
                       </div>
                     </div>
                   </td>
@@ -88,6 +89,7 @@
                     </form>
                   </td>
                 </tr>
+                @endforeach
                 <!-- end table row -->
               </tbody>
             </table>
