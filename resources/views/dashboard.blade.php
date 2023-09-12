@@ -30,7 +30,7 @@
       <nav class="sidebar-nav">
         <ul>
             <li class="nav-item nav-item-has-children">
-            <a  href="{{ route('category.create') }}">
+            <a  href="{{ route('category.index') }}">
             <span class="icon">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -44,12 +44,8 @@
           </li>
           <li class="nav-item nav-item-has-children">
             <a
-              href="#0"
-              data-bs-toggle="collapse"
-              data-bs-target="#ddmenu_1"
-              aria-controls="ddmenu_1"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
+              href="{{ route('product.index') }}"
+
             >
               <span class="icon">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

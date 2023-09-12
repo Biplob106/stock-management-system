@@ -29,6 +29,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/admin/logout',[ProfileController::class,'adminlogout'])->name('admin.logout');
+});
+
+/*
+Category Routes
+
+ */
+Route::middleware('auth')->group(function () {
     Route::get('/category/index',[CatergoryController::class,'index'])->name('category.index');
     Route::get('/category/create',[CatergoryController::class,'create'])->name('category.create');
     Route::post('/category/store',[CatergoryController::class,'store'])->name('category.store');
@@ -37,6 +44,21 @@ Route::middleware('auth')->group(function () {
     Route::delete('/category/delete/{id}',[CatergoryController::class,'delete'])->name('category.delete');
     Route::get('/category/{id}',[CatergoryController::class,'show'])->name('category.show');
 });
+
+
+/*
+Products  Routes
+
+ */
+
+ Route::middleware('auth')->group(function () {
+    Route::get('/products/index',[ProductController::class,'index'])->name('product.index');
+    Route::get('/products/create',[ProductController::class,'create'])->name('product.create');
+    Route::post('/products/store',[ProductController::class,'store'])->name('product.store');
+
+});
+
+
 
 
 

@@ -33,7 +33,7 @@
         <ul>
           <li class="nav-item nav-item-has-children">
             <a
-              href="#0"
+              href="{{ route('category.index') }}"
               data-bs-toggle="collapse"
               data-bs-target="#ddmenu_1"
               aria-controls="ddmenu_1"
@@ -53,7 +53,7 @@
           </li>
           <li class="nav-item nav-item-has-children">
             <a
-              href="{{ route('product.index') }}"
+              href="#0"
               data-bs-toggle="collapse"
               data-bs-target="#ddmenu_1"
               aria-controls="ddmenu_1"
@@ -244,13 +244,8 @@
           <!-- ========== title-wrapper start ========== -->
           <div class="title-wrapper pt-30">
             <div class="row align-items-center">
-              <div class="col-md-6">
-                <div class="title">
-                  <h2>eCommerce Dashboard</h2>
-                </div>
-              </div>
               <!-- end col -->
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <div class="breadcrumb-wrapper">
                   <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -258,7 +253,7 @@
                         <a href="#0">Dashboard</a>
                       </li>
                       <li class="breadcrumb-item active" aria-current="page">
-                        eCommerce
+                        Products
                       </li>
                     </ol>
                   </nav>
