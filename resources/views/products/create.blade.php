@@ -25,11 +25,14 @@
     @csrf
      <div class="row">
         <div class="mb-3 mt-3">
-            <label for="category" class="form-label"><strong>Category</strong></label>
-            <select id="category" class="form-select">
-              <option>Category</option>
-              <option>Category1</option>
-            </select>
+            <div class="form-group">
+                <label for="category_id">Category</label>
+                <select name="category_id" id="category_id">
+                    @foreach ( $product as $data)
+                        <option value="{{ $data->id }}">{{ $data->name }}</option>
+                    @endforeach
+                </select>
+            </div>
         </div>
         <div class="mb-3 mt-3">
             <div class="form-group">

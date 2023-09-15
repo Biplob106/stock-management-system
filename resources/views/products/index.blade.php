@@ -12,10 +12,10 @@
               <thead>
                 <tr>
                   <th class="lead-info">
-                    <h6>Product Name</h6>
+                    <h6>Category </h6>
                   </th>
                   <th class="lead-email">
-                    <h6>Category </h6>
+                    <h6>Product Name</h6>
                   </th>
                   <th class="lead-email">
                     <h6>Quantity</h6>
@@ -42,24 +42,26 @@
                 <!-- end table row-->
               </thead>
               <tbody>
+                @foreach ($product as $products)
+
                 <tr>
                   <td class="min-width">
-                    <p>name</p>
+                    <p>{{ $products->category->name }}</p>
                   </td>
                   <td class="min-width">
-                    <p>category</p>
+                    <p>{{ $products->name }}</p>
                   </td>
                   <td class="min-width">
-                    <p>Qunantity</p>
+                    <p>{{ $products->quantity }}</p>
                   </td>
                   <td class="min-width">
-                    <p>desc</p>
+                    <p>{{ $products->description}}</p>
                   </td>
                   <td class="min-width">
-                    <p>price</p>
+                    <p>{{ $products->price }}</p>
                   </td>
                   <td class="min-width">
-                    <p>unique code</p>
+                    <p></p>
                   </td>
                   <td class="min-width">
                     <div class="lead">
@@ -88,6 +90,7 @@
                     </form>
                   </td>
                 </tr>
+                @endforeach
                 <!-- end table row -->
               </tbody>
             </table>

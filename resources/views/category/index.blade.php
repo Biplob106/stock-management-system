@@ -45,13 +45,11 @@
                         <a class="btn btn-info" href="{{ route('category.show',$category->id) }}">Show</a>
 
                         <a class="btn btn-primary" href="{{ route('category.edit',$category->id) }}">Edit</a>
+                        <a class="btn btn-primary" href="{{ route('category.delete',$category->id) }}">Delete</a>
 
-                    <form action="{{ route('category.delete',$category->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
+                    <!--<form action="{{route('category.delete',$category->id)    }}" method="POST"> -->
 
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </form>
+
                   </td>
                 </tr>
                 @endforeach
