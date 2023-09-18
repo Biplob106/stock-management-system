@@ -32,6 +32,7 @@ class CatergoryController extends Controller
             $image->move($destinationPath, $profileImage);
             $input['image'] = $profileImage;
 
+
         }
         Category::create($input)->save();
 
@@ -67,9 +68,9 @@ class CatergoryController extends Controller
         }
         $category->update([
             'name'=>$request->name,
-            'image'=>$request->image,
+            'image'=>$profileImage,
         ]);
-        return redirect()->route('categorys.index')
+        return redirect()->route('category.index')
           ->with('success', 'category updated successfully.');
 
      }

@@ -40,16 +40,15 @@
                     <p>{{$category->name}}</p>
                   </td>
                   <td>
-
-
                         <a class="btn btn-info" href="{{ route('category.show',$category->id) }}">Show</a>
 
                         <a class="btn btn-primary" href="{{ route('category.edit',$category->id) }}">Edit</a>
+
+                    <form action="{{route('category.delete',$category->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
                         <a class="btn btn-primary" href="{{ route('category.delete',$category->id) }}">Delete</a>
-
-                    <!--<form action="{{route('category.delete',$category->id)    }}" method="POST"> -->
-
-
+                    </form>
                   </td>
                 </tr>
                 @endforeach

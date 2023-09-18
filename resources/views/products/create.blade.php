@@ -28,7 +28,7 @@
             <div class="form-group">
                 <label for="category_id">Category</label>
                 <select name="category_id" id="category_id">
-                    @foreach ( $product as $data)
+                    @foreach ( $categories as $data)
                         <option value="{{ $data->id }}">{{ $data->name }}</option>
                     @endforeach
                 </select>
@@ -62,14 +62,14 @@
         </div>
         <div class="mb-3 mt-3">
             <div class="form-group">
-                <strong>Gallery Image</strong>
-                <input type="file" name="image" class="form-control" placeholder="image" >
+                <strong>Unique Code</strong>
+                <input type="number" name="unique_code" class="form-control" placeholder="price" >
             </div>
         </div>
         <div class="mb-3 mt-3">
             <div class="form-group">
-                <strong>Feature Image</strong>
-                <input type="file" name="image" class="form-control" placeholder="image" >
+                <strong>feature Image</strong>
+                <input type="file" name="feature_image" class="form-control" placeholder="image" >
             </div>
         </div>
 

@@ -16,35 +16,78 @@ class ProductController extends Controller
 
     public function create(){
 
-        $product = Category::all();
+        $categories = Category::all();
 
-        return view('products.create',compact('product'));
+        return view('products.create',compact('categories'));
     }
     public function store(Request $request)
     {
         $request->validate([
             'name'=>'required',
-            'category-name'=>'required',
+            'category_id'=>'required',
             'quantity'=>'required',
             'description'=>'required',
             'price'=>'required',
-            ' image-gallery '=>'required|image|mimes:jpeg,jpg,png,gif',
-            ' feature-image '=>'required|image|mimes:jpeg,jpg,png,gif',
+            'unique_code'=>'required',
+            'feature_image'=>'required|image|mimes:jpeg,jpg,png,gif',
 
         ]);
         $input = $request->all();
 
-        if ($image = $request->file('image')) {
+        if ($image = $request->file('feature_image')) {
             $destinationPath = 'images/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
-            $input['image'] = $profileImage;
+            $input['feature_image'] = $profileImage;
+
+        }
+        Product::create($input)->save();
+        return redirect()->route('product.index')
+                        ->with('success','product created successfully.');
+
+    }
+    public function show($id){
+
+        $product=Product::find($id);
+        return view('products.show',compact('product'));
+    }
+    public function edit($id){
+        $product = Product::find($id);
+
+        return view('products.edit',compact('product'));
+
+        }
+
+    public function update(Request $request ,$id){
+        $request->validate([
+            'name'=>'required',
+            'category_id'=>'required',
+            'quantity'=>'required',
+            'description'=>'required',
+            'price'=>'required',
+            'unique_code'=>'required',
+            'feature_image'=>'required|image|mimes:jpeg,jpg,png,gif',
+
+        ]);
+        $input = $request->all();
+
+        if ($image = $request->file('feature_image')) {
+            $destinationPath = 'images/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['feature_image'] = $profileImage;
 
         }
         Product::create($input)->save();
 
         return redirect()->route('product.index')
-                        ->with('success','category created successfully.');
-
+                        ->with('success','Product updated successfully.');
     }
+    public function destroy($id){
+
+        $product=Product::find($id)->delete();
+
+       return redirect()->route('product.index')->with('success','product deleted successfully');
+    }
+
 }

@@ -21,9 +21,9 @@
         </ul>
     </div>
 @endif
-<form action="{{  route('category.edit',$category->id)}}"  enctype="multipart/form-data"  method="POST">
-    {{  csrf_field()}}
-    {{ method_field('PUT') }}
+<form action="{{  route('category.update',$category->id)}}"  enctype="multipart/form-data"  method="POST">
+    @csrf
+    @method('PUT')
      <div class="row">
         <div class="mb-3 mt-3">
             <div class="form-group">
