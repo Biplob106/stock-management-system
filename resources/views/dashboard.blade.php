@@ -60,7 +60,7 @@
           </li>
           <li class="nav-item nav-item-has-children">
             <a
-              href="#0"
+              href="{{ route('asset.index') }}"
               class="collapsed"
               data-bs-toggle="collapse"
               data-bs-target="#ddmenu_2"
@@ -76,7 +76,7 @@
                     d="M13.125 2.29167L16.0417 5.20834H14.1667C13.5913 5.20834 13.125 4.74197 13.125 4.16667V2.29167Z" />
                 </svg>
               </span>
-              <span class="text">Pages</span>
+              <span class="text">Calculate Assets</span>
             </a>
 
           </li>
@@ -265,10 +265,6 @@
                 <div class="content">
                   <h6 class="mb-10">New Orders</h6>
                   <h3 class="text-bold mb-10">34567</h3>
-                  <p class="text-sm text-success">
-                    <i class="lni lni-arrow-up"></i> +2.00%
-                    <span class="text-gray">(30 days)</span>
-                  </p>
                 </div>
               </div>
               <!-- End Icon Cart -->
@@ -282,10 +278,6 @@
                 <div class="content">
                   <h6 class="mb-10">Total Income</h6>
                   <h3 class="text-bold mb-10">$74,567</h3>
-                  <p class="text-sm text-success">
-                    <i class="lni lni-arrow-up"></i> +5.45%
-                    <span class="text-gray">Increased</span>
-                  </p>
                 </div>
               </div>
               <!-- End Icon Cart -->
@@ -299,10 +291,6 @@
                 <div class="content">
                   <h6 class="mb-10">Total Expense</h6>
                   <h3 class="text-bold mb-10">$24,567</h3>
-                  <p class="text-sm text-danger">
-                    <i class="lni lni-arrow-down"></i> -2.00%
-                    <span class="text-gray">Expense</span>
-                  </p>
                 </div>
               </div>
               <!-- End Icon Cart -->
@@ -316,10 +304,6 @@
                 <div class="content">
                   <h6 class="mb-10">New User</h6>
                   <h3 class="text-bold mb-10">34567</h3>
-                  <p class="text-sm text-danger">
-                    <i class="lni lni-arrow-down"></i> -25.00%
-                    <span class="text-gray"> Earning</span>
-                  </p>
                 </div>
               </div>
               <!-- End Icon Cart -->

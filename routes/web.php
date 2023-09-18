@@ -63,6 +63,13 @@ Products  Routes
 
 });
 
+Route::middleware('auth')->group(function () {
+    Route::get('/asset/index',[AssetsController::class,'index'])->name('asset.index');
+
+
+});
+
+
 
 
 

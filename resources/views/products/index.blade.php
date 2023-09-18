@@ -63,7 +63,7 @@
                   <td class="min-width">
                     <div class="lead">
                       <div class="lead-image">
-                        <img src="{{asset('images/'.$products->feature_image)}}" width="100px" alt="" />
+                        <img src="{{asset('images/'.$products->feature_image)}}" width="200px" alt="" />
 
                       </div>
                     </div>
