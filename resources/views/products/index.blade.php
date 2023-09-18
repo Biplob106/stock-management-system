@@ -30,9 +30,6 @@
                     <h6>Unique Code</h6>
                   </th>
                   <th class="lead-email">
-                    <h6>Image gallery</h6>
-                  </th>
-                  <th class="lead-email">
                     <h6>Feature image</h6>
                   </th>
                   <th>
@@ -61,28 +58,22 @@
                     <p>{{ $products->price }}</p>
                   </td>
                   <td class="min-width">
-                    <p></p>
+                    <p>{{ $products->unique_code }}</p>
                   </td>
                   <td class="min-width">
                     <div class="lead">
                       <div class="lead-image">
-                        <img src="" width="100px" alt="" />
-                      </div>
-                    </div>
-                  </td>
-                  <td class="min-width">
-                    <div class="lead">
-                      <div class="lead-image">
-                        <img src="" width="100px" alt="" />
+                        <img src="{{asset('images/'.$products->feature_image)}}" width="100px" alt="" />
+
                       </div>
                     </div>
                   </td>
                   <td>
-                        <a class="btn btn-info" href="">Show</a>
+                        <a class="btn btn-info" href="{{ route('product.show',$products->id) }}">Show</a>
 
-                        <a class="btn btn-primary" href="">Edit</a>
+                        <a class="btn btn-primary" href="{{ route('product.edit',$products->id) }}">Edit</a>
 
-                    <form action="" method="POST">
+                    <form action="{{ route('product.delete',$products->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
 
